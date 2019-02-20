@@ -18,7 +18,8 @@ int attempts = 0, hit = 0, hanged = 0, lose = 0, win = 0;
  * 
  */
 void header() {
-    //system("clear");
+    system("clear");
+	system("cls");
     float fill[6];
     asciiArt(0, GAME_NAME, fill);
 }
@@ -163,7 +164,8 @@ bool isLose() {
  * Desenho da forca
  */
 void drawsGallows() {
-    //system("clear");
+    system("clear");
+	system("cls");
     
     int hanged = wrongGuesses();
 
@@ -233,10 +235,18 @@ int main() {
 		float fill[6];
 			
 		if (!isWin()) {
+			// Reset variables
+			memset(secretWord, 0, sizeof(secretWord));
+			memset(guesses, 0, sizeof(guesses));
+			
 			asciiArt(1, GAME_NAME, fill);
 		}
 		
 		if (!isLose()) {
+			// Reset variables
+			memset(secretWord, 0, sizeof(secretWord));
+			memset(guesses, 0, sizeof(guesses));
+			
 			asciiArt(2, GAME_NAME, fill);
 		}
 		
