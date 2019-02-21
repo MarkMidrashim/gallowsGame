@@ -1,7 +1,12 @@
 // Libs
 #include <stdio.h>
-#include <math.h>
+#include <time.h>
+#include <string.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
+#include <locale.h>
+#include <windows.h>
 
 // Defines
 #define GAME_NAME "Gallows"
@@ -18,8 +23,17 @@
 #define ANSI_COLOR_CYAN "\x1b[36m"
 #define ANSI_COLOR_RESET "\x1b[0m"
 
+#ifndef TRUE
+#  define TRUE  (1==1)
+#endif
+
+#ifndef FALSE
+#  define FALSE (!TRUE)
+#endif
+
 // Methods
 void asciiArt(int type, char gameName[], float *results);
+
 void header();
 void analytics();
 void readDatabase(int amountWords);
@@ -33,3 +47,4 @@ void drawsGallows();
 void submitGuess();
 bool tryAgain();
 void game();
+void resetVariables();
